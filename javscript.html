@@ -206,6 +206,23 @@ by using typeof() , we cab able to identify the type of the values
        we can pass function as and argument in javascript
      -->
 
+
+     <!-- what is closure ?
+        ==> function bundle together with it's lexical environment
+        ==> inner function can able to access parent function local variables by itself
+
+        syntax : 
+
+                   function functionName(){  // parent function
+                                           let a =1000; // parent function local variables
+                                                    function (){  // children function
+                                                                console.log(a)  // getting value from parent
+                                                                }() // children invokation
+
+                                           }functionName() // parent invokation
+     
+     -->
+
 <!-- callback-hell issue ? -->
 
 <!-- how you prevent global variable issue ? -->
