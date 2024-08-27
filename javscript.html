@@ -272,3 +272,56 @@ by using typeof() , we cab able to identify the type of the values
                         ==> map, reduce, filter, find
 
       -->
+
+      <!-- 
+      Shallow copy => it will take the reference and don't detach from the base one, if you are changing anything inside the new one it will effect on base one as well
+
+      eg :
+       let a =[1,2,3,4]
+           let b = a;
+           b.push(6);
+           console.log(b);//[1,2,3,4,6]
+           console.log(a);//[1,2,3,4,6]
+
+      Deep Copy :  it will take the reference and  detach from the base one, if you are changing anything inside the new one it won't effect on base one 
+
+            eg :
+       let a =[1,2,3,4]
+           let b = [...a]; // one way
+           let b = Object.assign([],a); // one way
+           let b = JSON.parse(JSON.stringify(a)); // one way
+           b.push(6);
+           console.log(b);//[1,2,3,4,6]
+           console.log(a);//[1,2,3,4,]
+      
+      -->
+
+      <!-- Template Literals:
+
+         ==> it is denoted by (``); backticks
+       
+          ==> we can able to write multiple line of paragrahs
+
+          ==> it will allows us to write javascript expressions
+
+      -->
+
+      <!--  spread and rest operator 
+        
+      ==> it is denoted by  (...) 
+
+      ==> spread method it will expands the array
+
+      ==> rest method will take rest of the values
+      -->
+
+      <!-- destructuring
+      
+         ==> unpack values from arrays and properties from objects is called as destructuring
+         
+         ==> array destructuring ==> let [a,b,c] = [1,2,3]
+
+
+      -->
+
+      <!-- recursive function -->    need to cover
