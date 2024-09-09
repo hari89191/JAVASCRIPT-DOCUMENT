@@ -225,10 +225,62 @@ by using typeof() , we cab able to identify the type of the values
      
      -->
 
-<!-- callback-hell issue ? -->
+<!-- ........................... MATH OBJECT.................................................-->
 
-<!-- how you prevent global variable issue ? -->
+   ==> Math.min()  ==> it will gives minimum value in array
 
+   ==> Math.max()  ==> it will gives maximum value in array
+
+   ==> Math.ceil()  ==> it always give top value . eg: Math.ceil(2.3); //3
+
+   ==> Math.floor()  ==> it always give ground value. eg: Math.floor(2.9); //2
+
+   ==> Math.random() ==> it always give value in between 0 to 1
+
+
+<!-- ...............................................LOOPS................................................. -->
+    <!-- loops in javascript 
+     
+    Loop ==> it will execute block of code repeatedly
+
+    type of loops in javascript 
+
+     ==> for Syntax
+       
+     for(initialization; condition; increment / decrement expression){
+     
+     }
+
+     
+     ==> while  syntax
+
+     initailization;
+
+     while(condition){
+     increment/decrement expression
+     }
+     
+     ==> do while syntax 
+
+initialization;
+
+do{
+increment or decrement expression
+}while(condition;)
+
+ ==> for of syntax  (it will gives only values)
+   
+ for(initialization of given array/object){
+ }
+ 
+ 
+ ==> for in   (it will gives only indexes)
+
+ for(initialization in given array/object){
+ }
+    
+    -->
+<!-- ...................................................ARRAY MUTATOR METHODS............................................. -->
 <!--  array methods ? 
 
    ==> in javaScript array is 0 based index
@@ -266,12 +318,19 @@ by using typeof() , we cab able to identify the type of the values
                         sort      ==> arr.sort() 
 
                         trim      ==> it will remove spaces from starting and ending of the string ==> str.trim()
+                        
+                        Array.isArray ==> it will checks the element is array or not
 
-      ==> iterator methods
+....................................................... ARRAY ITERATOR METHODS .................................. -->
+      <!-- ==> iterator methods
 
-                        ==> map, reduce, filter, find
+                        ==> map, reduce, filter, find, some, every,includes, indexOf, lastIndexOf
 
-      -->
+       -->
+
+
+
+<!-- ................................................COPIES DIFFERENCES....................................... -->
 
       <!-- 
       Shallow copy => it will take the reference and don't detach from the base one, if you are changing anything inside the new one it will effect on base one as well
@@ -295,7 +354,7 @@ by using typeof() , we cab able to identify the type of the values
            console.log(a);//[1,2,3,4,]
       
       -->
-
+<!-- .........................................  BACKTICKS ()``)................................................................ -->
       <!-- Template Literals:
 
          ==> it is denoted by (``); backticks
@@ -306,6 +365,7 @@ by using typeof() , we cab able to identify the type of the values
 
       -->
 
+<!-- ....................................................SPREAD & REST ........................................... -->
       <!--  spread and rest operator 
         
       ==> it is denoted by  (...) 
@@ -314,6 +374,8 @@ by using typeof() , we cab able to identify the type of the values
 
       ==> rest method will take rest of the values
       -->
+
+<!-- .................................................DESTRUCTURING..................................... -->
 
       <!-- destructuring
       
@@ -324,47 +386,156 @@ by using typeof() , we cab able to identify the type of the values
 
       -->
 
+<!-- .............................................OBJECTS.............................................. -->
 
-    <!-- loops in javascript 
-     
-    Loop ==> it will execute block of code repeatedly
-
-    type of loops in javascript 
-
-     ==> for , while , do while, for of , for in
-    
-    -->
-
-      <!-- grabage collector --> // need to cover
-
-      <!-- recursive function -->    //need to cover
-
-      <!--  generators --> // need to cover
-
-      <!-- time complexity -->  // need to cover
-
-      <!-- IIFE  -->  // need to cover
-
-      <!-- OOPS  ==> class, object, encapsulation, abstraction, inheritence, message passing  -->
-
-
-      <!-- 
+   Object ==> collection of key value pairs, both key and values are separated by colon and key value pairs are separated by comma,
       
-// math object
 
+   let obj ={
+      name:"sanju",
+      age:23,
+      isStudent:false
+   }
+
+<!-- ...................................................OBJECTS METHODS ..................................... -->
+
+   ==>  Object.keys()  ==> it will gives all the available keys in the object in array format
+
+     example:   let obj ={name:"some",age :23};
+                               console.log(Object.keys(obj)); //["name", "age"]
+
+   ==>  Object.values() ==> it will gives all the available values in the object in the array format
+
+     example:   let obj ={name:"some",age :23};
+     console.log(Object.values(obj)); //["some", 23]
+
+   ==> Object.entries()  ==> it will gives all the avialble keys and values in the same in array format  
+
+   example:   let obj ={name:"some",age :23};
+   console.log(Object.entries(obj)); //[["name", "some"], ["age", 23]]
+
+   ==> Object.freeze() ==> it will freeze the object, in that object we can't able to add or modify the properties
+    
+   example:   let obj ={name:"some",age :23};
+
+   Object.freeze(obj);
+   
+   obj.name="some one";
+
+   obj.email="some@gmail.com";
+
+   console.log(obj); //{name:"some",age :23};
+
+   ==> Object.seal() ==> by using seal, we can modify the properties available in the object but we can't able to add new properties(key value pairs);
+
+   example:   let obj ={name:"some",age :23};
+
+   Object.seal(obj);
+   
+   obj.name="some one";
+
+   obj.email="some@gmail.com";
+
+   console.log(obj); //{name:"some one",age :23};
+
+<!-- ............................................IIFE.......................................... -->
+
+
+ <!-- IIFE  -->  immediate invoke function expression , it will execute immediately, it will prevents global variable issue
+
+            
+    (function(){
+      console.log("immediate")
+   })()
+
+<!--............................................ASYNCHRONOUS FUNCTIONS.................................... -->
+
+     setTimeout ==> it will execute only once after delay time
+
+           syntax : setTimeout(callback, delaytiem)
+
+                   setTimeout(()=>{
+
+                   }, 100)
+
+      setInterval ==> it will execute repeatedly after delay time
+
+             syntax : setInterval(callback, delaytiem)
+
+                   setInterval(()=>{
+
+                   }, 100)
+
+<!-- ..........................................DEBOUNCING............................................... -->
+
+   Debouncing ==> it's a technique to improve application performance, it will hold the request for some time , then it'll execute the request,
+    it'll avoid multiple request for the same requirement, we are using setTimeout for debouncing, it'll execute only single time after delay time
+
+
+    syntax:  
+
+    setTimeout(()=>{
+       //request
+    }, 1000)
+
+
+<!-- .........................................THROTTLING.............................................. -->
+
+    Throttling ==> it's a technique to improve application performance, it will make a request repeatedlyafter delay time to get the latest information,
+    we are using setInterval for throttling
+
+    syntax:  
+
+    setInterval(()=>{
+       //request
+    }, 1000)
+
+
+
+    <!-- ..............................................RECURSIVE FUNCTION.................................... -->
+
+
+
+      recursive function :   function call by itself is called as recursive function
+
+<!-- ....................................................CURRYING........................................ -->
+     
+   Currying: it's a new technique to write a function with multiple aruguments converted into sequence of functions is simply called as Currying;
+
+      example: 
+           
+           older way:
+
+               function sum(a,b,c){
+                  return a+b+c
+               }
+               sum(1,2,3)
+
+           currying way : 
+
+           function sum (a){
+            return (b)=>{
+               return (c)=>{
+                  return a + b + c
+               }
+            }
+           }
+sum(1)(2)(3)
+
+<!-- ................................................. -->
+
+<!-- callback-hell issue ? --> // need to cover
+
+<!-- how you prevent global variable issue ? --> // need to cover
+<!-- ........................................................................................... -->
+ 
+<!--  generators --> // need to cover
+
+<!-- time complexity -->  // need to cover
+
+<!-- OOPS  ==> class, object, encapsulation, abstraction, inheritence, message passing  -->
+      
 // ways to convert arr to object 
-
-// event loop
-
-// asynchronous functions 
-
-// objects
-
-// objects methods
-
-// IIFE
-
-// currying 
 
 // call apply and bind
 
@@ -374,6 +545,8 @@ by using typeof() , we cab able to identify the type of the values
 
 // dom manipulation (event listners)
 
+// event bubling,event capturing , event delegation
+
 // hofs 
 
 // promises  && async await
@@ -382,6 +555,7 @@ by using typeof() , we cab able to identify the type of the values
 
 // oops concepts
 
+
 // DSA
-      
-      -->
+......................................................GARBAGE COLLECTOR........................ -->
+
