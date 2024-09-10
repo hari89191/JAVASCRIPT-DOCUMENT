@@ -280,6 +280,48 @@ increment or decrement expression
  }
     
     -->
+
+<!--.................................................... STRING TO ARRAY CONVERSIONS..................................  -->
+
+// ways to convert string into array
+let str="helloo world"
+// 1st way
+
+let arr=str.split("");
+console.log("arr :",arr)
+
+let arr1=str.split(" ");
+console.log("arr1 :",arr1)
+
+// 2nd way
+
+let arr2 = [...str]
+console.log("arr2 :",arr2)
+
+//3rd way
+
+let arr3 = Object.assign([], str);
+console.log("arr3 :",arr3)
+
+// 4th way
+
+let arr4=[]
+
+for(let i of str ){
+    arr4.push(i)
+}
+console.log("arr4 :", arr4)
+
+// 5th way
+
+let arr5= Array.from(str);
+console.log("arr5 :", arr5)
+
+// 6th way 
+
+let arr6= Array.prototype.slice.call(str)
+console.log("arr6 :",arr6)
+
 <!-- ...................................................ARRAY MUTATOR METHODS............................................. -->
 <!--  array methods ? 
 
@@ -396,6 +438,61 @@ increment or decrement expression
       age:23,
       isStudent:false
    }
+
+<!--...................................................ARRAY TO OBJECT CONVERSION...........................  -->
+
+// ways to convert array into an object
+let arr=["a","b","c","d"]
+
+// 1st way
+
+let obj1={...arr}
+console.log("obj1 :",obj1)
+
+// 2nd way
+
+let obj2=Object.assign({}, arr);
+console.log("obj2 :", obj2)
+
+// 3rd way
+let obj3 = arr.reduce((acc, curr, index)=>{
+   acc[index]=curr
+   return acc
+},{})
+console.log("obj3 :", obj3);
+
+// 4th way
+
+let obj4={}
+
+for(let element of arr){
+    if(obj4[element]){
+        obj4[element]++
+    }else{
+        obj4[element]=1
+    }
+}
+
+console.log("obj4 :", obj4)
+
+// 5th way
+
+let arr1=[["name","some one"],["age", 23]]
+
+let obj5= Object.fromEntries(arr1)
+console.log("obj5 :", obj5)
+
+
+// 6th way
+
+
+let obj6={}
+
+arr.forEach((item, index, self)=>{
+    return obj6[self[index]] = item
+})
+
+console.log("obj6 :", obj6)
 
 <!-- ...................................................OBJECTS METHODS ..................................... -->
 
