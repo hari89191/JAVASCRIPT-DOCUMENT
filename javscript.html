@@ -28,6 +28,8 @@
 
               ==> spread and rest operator denoted by (...)
 
+               ==> Default parameters
+
               ==> destructuring of array and object
 
               ==> arrow functions  denoted by (()=>)
@@ -280,6 +282,83 @@ increment or decrement expression
  }
     
     -->
+
+<!--....................................................ARRAYS.......................................................,  -->
+
+   Array: collection of multiple value ; 
+         eg: let arr = ["haran",23,true];
+
+        ==> type of an array is an object
+
+        ==> array is 0 based index in javascript
+
+        ==> to check the length we are using arrName.length()
+
+        ==> to access value inside an array ==> arr[index]
+
+     // ways to create an array in javascript
+
+// 1st way
+
+let arr =[1,2,3,4]
+
+console.log("arr :", arr)
+
+
+// 2nd way
+
+let arr2= new Array(5,6,7,8)
+
+console.log("arr2 :", arr2)
+
+// 3rd way
+
+let arr3 = Array.of(9,10,11,21)
+
+console.log("arr3 :", arr3)
+
+
+<!--.................................................... STRING TO ARRAY CONVERSIONS..................................  -->
+
+// ways to convert string into array
+let str="helloo world"
+// 1st way
+
+let arr=str.split("");
+console.log("arr :",arr)
+
+let arr1=str.split(" ");
+console.log("arr1 :",arr1)
+
+// 2nd way
+
+let arr2 = [...str]
+console.log("arr2 :",arr2)
+
+//3rd way
+
+let arr3 = Object.assign([], str);
+console.log("arr3 :",arr3)
+
+// 4th way
+
+let arr4=[]
+
+for(let i of str ){
+    arr4.push(i)
+}
+console.log("arr4 :", arr4)
+
+// 5th way
+
+let arr5= Array.from(str);
+console.log("arr5 :", arr5)
+
+// 6th way 
+
+let arr6= Array.prototype.slice.call(str)
+console.log("arr6 :",arr6)
+
 <!-- ...................................................ARRAY MUTATOR METHODS............................................. -->
 <!--  array methods ? 
 
@@ -397,6 +476,61 @@ increment or decrement expression
       isStudent:false
    }
 
+<!--...................................................ARRAY TO OBJECT CONVERSION...........................  -->
+
+// ways to convert array into an object
+let arr=["a","b","c","d"]
+
+// 1st way
+
+let obj1={...arr}
+console.log("obj1 :",obj1)
+
+// 2nd way
+
+let obj2=Object.assign({}, arr);
+console.log("obj2 :", obj2)
+
+// 3rd way
+let obj3 = arr.reduce((acc, curr, index)=>{
+   acc[index]=curr
+   return acc
+},{})
+console.log("obj3 :", obj3);
+
+// 4th way
+
+let obj4={}
+
+for(let element of arr){
+    if(obj4[element]){
+        obj4[element]++
+    }else{
+        obj4[element]=1
+    }
+}
+
+console.log("obj4 :", obj4)
+
+// 5th way
+
+let arr1=[["name","some one"],["age", 23]]
+
+let obj5= Object.fromEntries(arr1)
+console.log("obj5 :", obj5)
+
+
+// 6th way
+
+
+let obj6={}
+
+arr.forEach((item, index, self)=>{
+    return obj6[self[index]] = item
+})
+
+console.log("obj6 :", obj6)
+
 <!-- ...................................................OBJECTS METHODS ..................................... -->
 
    ==>  Object.keys()  ==> it will gives all the available keys in the object in array format
@@ -447,6 +581,34 @@ increment or decrement expression
     (function(){
       console.log("immediate")
    })()
+
+<!--...........................................CALL , APPLY, BIND METHODS.................................  -->
+
+// call , apply and bind methods
+
+// call and apply both are immediate invoke functions , the difference between both call and apply are the way we pass arguments
+
+// bind is similar to call method but it's not immediate invoke function , we need to invoke the function
+
+let company1={
+    campus:"SEZ-UNIT",
+    company:"Infosys"
+}
+let company2={
+    campus:"Mind-space",
+    company:"TCS",
+}
+
+let companyName=function(location, block){
+    console.log(this.campus +" ," + this.company +", " + location + " , " + block)
+}
+companyName.call(company1,"Hyderabad",9 )
+companyName.apply(company2,["Hyderabad",12])
+
+let BindData=companyName.bind(company1,"Hyderabad",9 )
+
+BindData()
+
 
 <!--............................................ASYNCHRONOUS FUNCTIONS.................................... -->
 
@@ -558,4 +720,26 @@ sum(1)(2)(3)
 
 // DSA
 ......................................................GARBAGE COLLECTOR........................ -->
+
+
+
+
+
+
+
+
+<!--...........................................INTERVIEW POQ ...................................................  -->
+
+let obj ={
+    name:"some",
+    age:23,
+    person:"male"
+}
+// person to gender (we are changing key here)
+
+
+let {name,age,person:gender} = obj;
+console.log(name);//"some"
+console.log(age);//23
+console.log(gender);//"male"
 
