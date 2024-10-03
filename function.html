@@ -1,14 +1,14 @@
-// function / normal function / regular function ==> logical group of one or more expressions
+ function / normal function / regular function ==> logical group of one or more expressions
 
-// ways to write a function => 1.function declaration, 2.function expression, 3.arrow function
-//syntax for function
+ ways to write a function => 1.function declaration, 2.function expression, 3.arrow function
 
-// declaration functionName(parameters){
-// return    
-// }
-// invoke(arguments)
+=> syntax for function:
+declaration functionName(parameters){
+ return    
+ }
+ invoke(arguments)
 
-// Function Declaration
+==> Function Declaration
 function some(a,b){
      return a+b
  }
@@ -17,7 +17,7 @@ function some(a,b){
 
 -----------------------------------------------------------------------------------------
 
- // Function Expression
+ ==> Function Expression
  
  let multiply=function(a,b){return a * b}
  
@@ -27,8 +27,8 @@ function some(a,b){
 
  ---------------------------------------------------------------------------------------------
 
- // Arrow Function (ES6 Feature)
-//  ==> it's denoted by ()=>
+ ==> Arrow Function (ES6 Feature)
+  ==> it's denoted by ()=>
  
  let subtract=(a,b)=> a-b 
  let output2=subtract(5,3)
@@ -36,9 +36,9 @@ function some(a,b){
 
 ------------------------------------------------------------------------------------------------
 
-// Anonymous function
+==> Anonymous function
  
-//  ==> anonymous function is a function , but it is not having any name (unNamed Function)
+  ==> anonymous function is a function , but it is not having any name (unNamed Function)
 
 let sum = function (a,b){
     return a+b
@@ -48,7 +48,7 @@ console.log(result)
 
 -----------------------------------------------------------------------------------------------------
 
-// function named expression
+==> function named expression
 
 let add2= function addition(a,b){ return a+b}
 let result1=add2(7,8)
@@ -56,9 +56,9 @@ console.log(result1);
 
 ------------------------------------------------------------------------------------------------------
 
-// IIFE (Immediate Invoke function expression)
+==> IIFE (Immediate Invoke function expression)
 
-// ==> it will invoke immediately, purpose of IIFE is to prevent global variable issue
+ ==> it will invoke immediately, purpose of IIFE is to prevent global variable issue
 var a=1000;
 (function (){
     console.log(a)
@@ -68,14 +68,14 @@ var a=1000;
 
 ----------------------------------------------------------------------------------------------------
 
-// callback function
-//  ==> callback function is a function , and it will execute after actual function execution
+==> callback function
+ ==> callback function is a function , and it will execute after actual function execution
 
 ----------------------------------------------------------------------------------------------------
 
-// HOF (Higher Ordered Function)
-//  ==> higher ordered function is a function, it will accepts function as an argument
-// ==> map, filter, find, reduce .etc...
+==> HOF (Higher Ordered Function)
+ ==> higher ordered function is a function, it will accepts function as an argument
+ ==> map, filter, find, reduce .etc...
 let arr=[1,2,3,4]
 
 let count= arr.map((item)=>{ 
@@ -85,11 +85,11 @@ console.log(count)
 
 -----------------------------------------------------------------------------------------------------
 
-// Currying
+==> Currying
 
-// ==> it's new way technique to write function with multiple arguments into sequence of function
+  => it's new way technique to write function with multiple arguments into sequence of function
 
-// normal function syntax
+==> normal function syntax
 
 function addition1(a,b){
     return a+b
@@ -97,7 +97,7 @@ function addition1(a,b){
 let res=addition1(6,7)
 console.log(res);
 
-// currying syntax
+==> currying syntax
 
 function additionCurr(a){
     return function (b){
@@ -110,22 +110,22 @@ console.log(res1)
 -----------------------------------------------------------------------------------------------------
 
 
-//First Class Function
-// ==> everything in javascript is a function
-// ==> functions are heart of javascript
-// ==> function we can able to write inside a function
-// ==> we can able to assign function as an value to any variable
-// ==> we can able to pass function as an argument
+==>First Class Function
+  ==> everything in javascript is a function
+  ==> functions are heart of javascript
+  ==> function we can able to write inside a function
+  ==> we can able to assign function as an value to any variable
+  ==> we can able to pass function as an argument
 
 ----------------------------------------------------------------------------------------------------
 
-// equality definitions
+== equality definitions
 
-//      = means assigning value;
-//     == means comparing value;
-//    === means comparing both type and value;
+      = means assigning value;
+     == means comparing value;
+    === means comparing both type and value;
  
 -------------------------------------------------------------------------------------------------------- 
 
-//  synchronous and asynchronous functions callbacks,
-// callbackhell issue, ==> promises, async/await
+==>  synchronous and asynchronous functions callbacks,
+==> callbackhell issue, ==> promises, async/await
