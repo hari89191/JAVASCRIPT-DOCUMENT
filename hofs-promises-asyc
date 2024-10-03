@@ -1,0 +1,91 @@
+// iterator methods ==> map, filter, find, reduce, some, every
+
+//  ==> single dependency ==> map, filter, find, some, every
+
+//   ==> double dependency ==> reduce
+
+//  HOF [Higher Ordered Function] ==> HOF is a function , it will take function as an argument 
+
+
+// ==> map ==> it's an higher order function , it will iterates each and every value  and it will returns each and every value in the array, it will creates brand new array
+    //  purpose of map ==> to print each and every value from the array, to manupulate/modify each and every value in the array
+    
+// ==> filter ==> it's an higher order function , it will iterates each and every value and based upon condition it will return all the values which are satisfied by the condition
+
+// ==> find ==> it's an higher order function , it will iterates each and every value and based upon condition it will return initial value which is satisfied by the taken condition
+
+// ==> some ==> it will iterates each and every value and based upon the condition it will gives true or false 
+// note : atleast one elemnet satisfies the condition then it will returns true if not it will gives false
+
+//  ==> every ==> it will iterates each and every value and based upon the condition it will gives true or false 
+  // note : if each and every elemnet  satisfies the condition then it will returns true if not it will gives false  
+  
+// ==> reduce ==>  it's an higher order function , it will iterates each and every value and it always gives the single value, in reduce method it will accepts two arguments one is callback function and another one is dependency value
+
+//   syntax==> arrayname.reduce((acc,curr, index, self)=>{},0)
+
+// ==> acc => it denotes second dependency
+// ==> curr ==> it denotes values
+
+//  note ==> if you perform count operation second dependency is 0
+        //  ==> if you want data in array format second dependency is []
+        //  ==> if you want data in object format second dependency is {}
+        //  ==> by default it is 0
+  
+//  indexOf ==> it will iterates each and every value, it will checks the index of elemenet , it will only gives first index of the element
+
+// let arr=[6,7,8,6,4,6,5,6,3,2]
+// let duplicate = [...new Set(arr)]
+// let duplicate=arr.filter((item, index, self)=>{
+//     return self.indexOf(item)  === index
+// })
+
+// // let result=arr.filter((item, index, self)=>{
+// // return arr.indexOf(item)
+// // })
+// console.log(duplicate)
+
+// lastIndexOf==> it will iterates each and every value,it will checks the index of elemenet , it will only gives last index of the element
+
+//  includes ==> it will iterates each and every value and if the element is there what ewe are looking in the array then it will gives true, otherwise it will gives false
+    
+
+// indexOf, lastIndexOf, includes
+
+
+// forEach ==> it will iterates each and every value, this in not introduced in ES6 , this is introduced in older version of Ecma Script
+
+
+// promise ==> it will handles asynchronous tasks and it will resolve callback hell issue
+
+let examplePromise=new Promise((pending, resolve, reject)=>{
+    let a="hello";
+    
+    if(a="hello"){
+         
+        setTimeout(()=>{
+           resolve("matched string")
+        },100)
+    }
+    else{
+        reject("rejected cause of misMatch  string")
+    }
+})
+examplePromise 
+.then((message)=> console.log(${message}))
+.catch((error)=> console.log(${error}))
+// async/await
+let getData =async()=>{
+    try{
+            let api = await fetch("https://jsonplaceholde.typicode.com/users")
+    let response = await api.json()
+    setData(response)
+    }
+// polyFills 
+
+
+
+// promise.all()
+// promise.allSetteled()
+// promise.any()
+// promise.race()
