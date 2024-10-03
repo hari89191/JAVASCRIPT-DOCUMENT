@@ -1,4 +1,4 @@
-==> iterator methods ==> map, filter, find, reduce, some, every
+ iterator methods ==> map, filter, find, reduce, some, every
 
   => single dependency ==> map, filter, find, some, every
   => double dependency ==> reduce
@@ -6,20 +6,20 @@
 ==>  HOF [Higher Ordered Function] ==> HOF is a function , it will take function as an argument 
 
 
- ==> map ==> it's an higher order function , it will iterates each and every value  and it will returns each and every value in the array, it will creates brand new array
+  map ==> it's an higher order function , it will iterates each and every value  and it will returns each and every value in the array, it will creates brand new array
   purpose of map ==> to print each and every value from the array, to manupulate/modify each and every value in the array
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
- ==> filter ==> it's an higher order function , it will iterates each and every value and based upon condition it will return all the values which are satisfied by the condition
+  filter ==> it's an higher order function , it will iterates each and every value and based upon condition it will return all the values which are satisfied by the condition
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- ==> find ==> it's an higher order function , it will iterates each and every value and based upon condition it will return initial value which is satisfied by the taken condition
+  find ==> it's an higher order function , it will iterates each and every value and based upon condition it will return initial value which is satisfied by the taken condition
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- ==> some ==> it will iterates each and every value and based upon the condition it will gives true or false 
- note : atleast one elemnet satisfies the condition then it will returns true if not it will gives false
+  some ==> it will iterates each and every value and based upon the condition it will gives true or false 
+   note : atleast one elemnet satisfies the condition then it will returns true if not it will gives false
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  ==> every ==> it will iterates each and every value and based upon the condition it will gives true or false 
-   note : if each and every elemnet  satisfies the condition then it will returns true if not it will gives false  
+   every ==> it will iterates each and every value and based upon the condition it will gives true or false 
+    note : if each and every elemnet  satisfies the condition then it will returns true if not it will gives false  
  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
- ==> reduce ==>  it's an higher order function , it will iterates each and every value and it always gives the single value, in reduce method it will accepts two arguments one is callback function and another one is dependency value
+  reduce ==>  it's an higher order function , it will iterates each and every value and it always gives the single value, in reduce method it will accepts two arguments one is callback function and another one is dependency value
 
     syntax==> arrayname.reduce((acc,curr, index, self)=>{},0)
 
@@ -74,7 +74,7 @@ examplePromise
 .then((message)=> console.log(${message}))
 .catch((error)=> console.log(${error})) 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- async/await
+==> async/await
 let getData =async()=>{
     try{
             let api = await fetch("https://jsonplaceholde.typicode.com/users")
