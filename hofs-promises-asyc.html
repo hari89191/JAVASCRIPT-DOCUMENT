@@ -4,7 +4,7 @@
   => double dependency ==> reduce
 
 ==>  HOF [Higher Ordered Function] ==> HOF is a function , it will take function as an argument 
-
+                                   ==>function reusability
 
   map ==> it's an higher order function , it will iterates each and every value  and it will returns each and every value in the array, it will creates brand new array
   purpose of map ==> to print each and every value from the array, to manupulate/modify each and every value in the array
@@ -72,7 +72,36 @@ let examplePromise=new Promise((pending, resolve, reject)=>{
 })
 examplePromise 
 .then((message)=> console.log(${message}))
-.catch((error)=> console.log(${error})) 
+.catch((error)=> console.log(${error}))
+-----------------------------------------------------------------
+Example 2==>
+ const some = new Promise((pending, resolve, reject)=>{
+
+ })
+
+let some1=async()=>{
+    try{
+         let result= await fetch("")   
+    }
+catch{
+    console.log("unAuthorized")
+}
+}
+
+
+    let a=10;
+let some = new Promise((resolve, reject) =>{
+
+    if(a===10){
+        resolve("success")
+    }else{
+        reject("failure")
+    }
+} );
+
+some.then((s)=> console.log(s))
+.catch((i)=> consol.log(i))
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ==> async/await
 let getData =async()=>{
@@ -82,9 +111,47 @@ let getData =async()=>{
     setData(response)
     }
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// polyFills 
+==> callbackhell : to resolve callbackhell issue we're using promises[es6] or async/await[es7]
 
+ setTimeout(()=>{
+    ()=>{
+         ()=>{
+             ()=>{
+                 ()=>{
+                     ()=>{
+                        
+                     }
+                 }
+             }
+         }
+     }
+ });
 
+  to resolve callbackhell issue we're using promises[es6] or async/await[es7]
+
+{
+    "name":"xoms",
+    "msk"
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+==> polyFills
+
+Array.prototype.combining= function (callback){
+    let result=[]
+    for(let i=0; i<this.length;i++){
+        if(callback(this[i],i,this)){
+            result.push(this[0])
+        }
+         return result   
+    }
+
+}
+
+let countAll=[1,2,3,4,5,6].combining((item)=>{
+    return item
+})
+console.log(countAll)
+---------------------------------------------------------------------------------------------------------------------------------------------------
 
 // promise.all()
 // promise.allSetteled()
