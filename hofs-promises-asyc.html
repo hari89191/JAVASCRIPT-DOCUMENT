@@ -140,7 +140,7 @@ Array.prototype.combining= function (callback){
     let result=[]
     for(let i=0; i<this.length;i++){
         if(callback(this[i],i,this)){
-            result.push(this[0])
+             result.push(this[0])          <!-- this[0]=>for firstindex ,  this[this.length-1]=>for last index -->
         }
          return result   
     }
